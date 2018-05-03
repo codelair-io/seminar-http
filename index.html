@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>ISSFinder</title>
+</head>
+<body>
+
+<div id="result">
+
+</div>
+
+
+<script>
+  fetch("https://issfinder-microservice.oslab.int.redbridge.se/issvisible")
+      .then((resp) => resp.json()) // Transform the data into json
+      .then(function(data) {
+        document.getElementById("result").innerText = "We can see the ISS on " + new Date(data.issVisible);
+      });
+</script>
+
+</body>
+</html>
