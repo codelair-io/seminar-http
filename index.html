@@ -13,7 +13,7 @@
   fetch("https://issfinder-microservice.oslab.int.redbridge.se/issvisible", { mode: "cors" })
       .then((resp) => resp.json()) // Transform the data into json
       .then(function(data) {
-        document.getElementById("result").innerText = "We can see the ISS on " + new Date(data.issVisible);
+        document.getElementById("result").innerText = "We can see the ISS on " + new Date(data.issVisible * 1000);
       });
 </script>
 
